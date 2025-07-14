@@ -10,11 +10,12 @@
       "isStarred": true,
       "tags": ["2P"],
       "solutionMetadata": {
-        "kind": "internal"
+        "kind": "in-module",
+        "moduleId": "two-pointers"
       }
     }
   ],
-  "ad": [
+  "general": [
     {
       "uniqueId": "cses-1640",
       "name": "Sum of Two Values",
@@ -70,7 +71,7 @@
       "source": "CF",
       "difficulty": "Easy",
       "isStarred": false,
-      "tags": ["2P"],
+      "tags": ["2P", "Binary Search"],
       "solutionMetadata": {
         "kind": "internal"
       }
@@ -125,7 +126,7 @@
     },
     {
       "uniqueId": "cf-814C",
-      "name": "Garland",
+      "name": "An impassioned circulation of affection",
       "url": "https://codeforces.com/problemset/problem/814/C",
       "source": "CF",
       "difficulty": "Normal",

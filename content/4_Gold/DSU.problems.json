@@ -10,7 +10,8 @@
       "isStarred": false,
       "tags": ["DSU"],
       "solutionMetadata": {
-        "kind": "none"
+        "kind": "in-module",
+        "moduleId": "dsu"
       }
     }
   ],
@@ -96,7 +97,8 @@
       "isStarred": false,
       "tags": ["DSU"],
       "solutionMetadata": {
-        "kind": "internal"
+        "kind": "internal",
+        "hasHints": true
       }
     },
     {
@@ -108,7 +110,8 @@
       "isStarred": false,
       "tags": ["DSU"],
       "solutionMetadata": {
-        "kind": "internal"
+        "kind": "internal",
+        "hasHints": true
       }
     }
   ],

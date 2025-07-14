@@ -34,8 +34,7 @@
       "isStarred": false,
       "tags": [],
       "solutionMetadata": {
-        "kind": "autogen-label-from-site",
-        "site": "CF"
+        "kind": "internal"
       }
     },
     {
@@ -72,8 +71,7 @@
       "isStarred": false,
       "tags": ["Complete Search", "Greedy"],
       "solutionMetadata": {
-        "kind": "autogen-label-from-site",
-        "site": "CF"
+        "kind": "internal"
       }
     },
     {
@@ -85,8 +83,8 @@
       "isStarred": false,
       "tags": [],
       "solutionMetadata": {
-        "kind": "USACO",
-        "usacoId": "509"
+        "kind": "internal",
+        "hasHints": true
       }
     },
     {
@@ -98,20 +96,7 @@
       "isStarred": false,
       "tags": ["Ad Hoc"],
       "solutionMetadata": {
-        "kind": "autogen-label-from-site",
-        "site": "CF"
-      }
-    },
-    {
-      "uniqueId": "aio24-backpacking",
-      "name": "Backpacking",
-      "url": "https://orac2.info/problem/aio24backpacking/",
-      "source": "AIO",
-      "difficulty": "Normal",
-      "isStarred": false,
-      "tags": [],
-      "solutionMetadata": {
-        "kind": "none"
+        "kind": "internal"
       }
     },
     {
@@ -147,8 +132,7 @@
       "isStarred": false,
       "tags": ["Simulation"],
       "solutionMetadata": {
-        "kind": "autogen-label-from-site",
-        "site": "CF"
+        "kind": "internal"
       }
     },
     {

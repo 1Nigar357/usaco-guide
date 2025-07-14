@@ -3,6 +3,7 @@ import { BaseHit, Hit } from 'instantsearch.js';
 import * as React from 'react';
 import { Highlight, useHits } from 'react-instantsearch';
 import { moduleIDToSectionMap } from '../../../content/ordering';
+import { useBlindMode } from '../../context/BlindModeContext';
 import { ConfettiProvider } from '../../context/ConfettiContext';
 import {
   useHideDifficultySetting,
@@ -11,9 +12,9 @@ import {
 } from '../../context/UserDataContext/properties/simpleProperties';
 import {
   AlgoliaProblemInfo,
-  ProblemInfo,
   getProblemURL,
   isUsaco,
+  ProblemInfo,
   recentUsaco,
 } from '../../models/problem';
 import DifficultyBox from '../DifficultyBox';
@@ -29,6 +30,8 @@ function ProblemHit({ hit }: ProblemHitProps) {
   const hideDifficulty = useHideDifficultySetting();
   const showTags = useShowTagsSetting();
   const hideModules = useHideModulesSetting();
+  const { isBlindMode } = useBlindMode();
+
   if (hit.problemModules.length == 0 && recentUsaco.includes(hit.source)) {
     hit.problemModules.push({
       id: 'usaco-monthlies',
@@ -38,13 +41,13 @@ function ProblemHit({ hit }: ProblemHitProps) {
   const problem = hit as unknown as ProblemInfo;
   problem.uniqueId = hit.objectID;
   return (
-    <div className="bg-white dark:bg-gray-900 shadow p-4 sm:p-6 rounded-lg ">
-      <div className="flex flex-row justify-between w-full">
+    <div className="rounded-lg bg-white p-4 shadow-sm sm:p-6 dark:bg-gray-900">
+      <div className="flex w-full flex-row justify-between">
         <span>
-          <span className="text-blue-700 dark:text-blue-400 font-medium text-sm">
+          <span className="text-sm font-medium text-blue-700 dark:text-blue-400">
             {hit.source}
           </span>
-          <p className="text-xl leading-6 mt-1 mb-2">
+          <p className="mt-1 mb-2 text-xl leading-6">
             <a
               href={hit.url}
               target="_blank"
@@ -55,7 +58,7 @@ function ProblemHit({ hit }: ProblemHitProps) {
             </a>
             {hit.isStarred && (
               <svg
-                className="h-6 w-4 text-blue-400 ml-2 pb-1 inline-block"
+                className="ml-2 inline-block h-6 w-4 pb-1 text-blue-400"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -100,13 +103,13 @@ function ProblemHit({ hit }: ProblemHitProps) {
             }
             target="_blank"
             rel="noreferrer"
-            className="text-gray-500 dark:text-dark-med-emphasis text-sm"
+            className="dark:text-dark-med-emphasis text-sm text-gray-500"
           >
             View Solution
             <svg
               viewBox="0 0 20 20"
               fill="currentColor"
-              className="h-4 w-4 inline ml-0.5 mb-1"
+              className="mb-1 ml-0.5 inline h-4 w-4"
             >
               <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
               <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
@@ -122,13 +125,13 @@ function ProblemHit({ hit }: ProblemHitProps) {
             )}`}
             target="_blank"
             rel="noreferrer"
-            className="text-gray-500 dark:text-dark-med-emphasis text-sm"
+            className="dark:text-dark-med-emphasis text-sm text-gray-500"
           >
             Open in IDE
             <svg
               viewBox="0 0 20 20"
               fill="currentColor"
-              className="h-4 w-4 inline ml-0.5 mb-1"
+              className="mb-1 ml-0.5 inline h-4 w-4"
             >
               <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
               <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
@@ -136,12 +139,12 @@ function ProblemHit({ hit }: ProblemHitProps) {
           </a>
         </>
       )}
-      {!hideModules && (
+      {!hideModules && !isBlindMode && (
         <>
-          <p className="text-sm text-gray-500 dark:text-dark-med-emphasis  mt-2">
+          <p className="dark:text-dark-med-emphasis mt-2 text-sm text-gray-500">
             Appears In:
           </p>
-          <ul className="list-disc ml-6">
+          <ul className="ml-6 list-disc">
             {hit.problemModules.map(({ id: moduleID, title: moduleLabel }) => (
               <li key={moduleID}>
                 <Link
@@ -161,7 +164,7 @@ function ProblemHit({ hit }: ProblemHitProps) {
         {showTags &&
           hit.tags?.map(tag => (
             <span
-              className="mr-2 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium leading-4 bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-dark-high-emphasis"
+              className="dark:text-dark-high-emphasis mr-2 inline-flex items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-xs leading-4 font-medium text-gray-800 dark:bg-gray-800"
               key={tag}
             >
               {tag}

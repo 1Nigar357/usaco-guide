@@ -10,7 +10,8 @@
       "isStarred": false,
       "tags": [],
       "solutionMetadata": {
-        "kind": "none"
+        "kind": "in-module",
+        "moduleId": "divisibility"
       }
     }
   ],
@@ -24,7 +25,8 @@
       "isStarred": true,
       "tags": [],
       "solutionMetadata": {
-        "kind": "none"
+        "kind": "in-module",
+        "moduleId": "divisibility"
       }
     }
   ],
@@ -110,7 +112,8 @@
       "isStarred": true,
       "tags": ["Divisibility"],
       "solutionMetadata": {
-        "kind": "internal"
+        "kind": "internal",
+        "hasHints": true
       }
     },
     {
@@ -122,7 +125,8 @@
       "isStarred": false,
       "tags": ["Divisibility"],
       "solutionMetadata": {
-        "kind": "internal"
+        "kind": "internal",
+        "hasHints": true
       }
     },
     {

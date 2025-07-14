@@ -15,7 +15,7 @@
       }
     }
   ],
-  "cum": [
+  "general": [
     {
       "uniqueId": "usaco-572",
       "name": "Breed Counting",
@@ -86,19 +86,6 @@
       "tags": ["Prefix Sums"],
       "solutionMetadata": {
         "kind": "internal"
-      }
-    },
-    {
-      "uniqueId": "usaco-104",
-      "name": "Haybale Stacking",
-      "url": "http://www.usaco.org/index.php?page=viewproblem2&cpid=104",
-      "source": "Old Bronze",
-      "difficulty": "Normal",
-      "isStarred": true,
-      "tags": ["Prefix Sums"],
-      "solutionMetadata": {
-        "kind": "internal",
-        "hasHints": true
       }
     },
     {
